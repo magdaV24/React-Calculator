@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+:root{
+  /*light theme*/
+  --backgroundLight:rgb(255,239,213);
+  --font: #171515;
+  --cream: #F9F6F0;
+  --beige: #6F5B3E;
+  /*dark mode*/
+  --backgroundDark: #341948;
+  --light: #9388A2;
+  --balck: #0E050F;
+  --darkBlue: #170B3B;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+#light.App{
+  color: var(--font);
+  background-color: var(--backgroundLight);
+}
+
+#dark.App{
+  color: var(--font);
+  background-color: var(--backgroundDark);
+}
+
+.calculator{
+  position: relative;
+  width: 400px;
+  height: 600px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#light.calculator{
+  background-color: var(--cream);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#dark.calculator{
+  background-color: var(--light);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, 
+              rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+              rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.display{
+  position: relative;
+  width: 400px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+#light.display{
+  background-color: var(--beige);
+  color: var(--cream);
+}
+
+#dark.display{
+  background-color: var(--darkBlue);
+  color: var(--light);
+}
+
+.display .history{
+  position: fixed;
+  margin: 0px 20px;
+  font-size: 20px;
+  opacity: .5;
+  margin-top: -50px;
+}
+
+.display .result{
+  position: relative;
+  margin: 0px 20px;
+  font-size: 35px;
+  margin-top: 40px;
+}
+
+.buttons{
+  width: 400px;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rows{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.button{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.last-row{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  width: 400px;
+  height: 100px;
+}
+
+.button-zero{
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#light.button:hover,
+#light.button-zero:hover{
+  opacity: .7;
+  cursor: pointer;
+  background-color: var(--beige);
+  color: var(--cream);
+}
+
+#dark.button:hover,
+#dark.button-zero:hover{
+  opacity: .7;
+  cursor: pointer;
+  background-color: var(--darkBlue);
+  color: var(--light);
+}
+
+header{
+  width: 80%;
+  height: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+header button{
+  width: 50px;
+  height: 50px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header#dark button{
+  background-color: var(--light);
+  color: var(--darkBlue);
+}
+
+header#light button{
+  background-color: var(--beige);
+  color: var(--cream);
+}
